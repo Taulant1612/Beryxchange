@@ -95,7 +95,7 @@ Please follow instructions here: https://www.rabbitmq.com/install-debian.html
 
     mkdir -p ~/.bitcoin
     touch ~/.bitcoin/bitcoin.conf
-    vim ~/.bitcoin/bitcoin.conf
+    nano ~/.bitcoin/bitcoin.conf
 
 Insert the following lines into the bitcoin.conf, and replce with your username and password.
 
@@ -103,14 +103,14 @@ Insert the following lines into the bitcoin.conf, and replce with your username 
     daemon=1
 
     # If run on the test network instead of the real bitcoin network
-    testnet=1
+    #testnet=0
 
     # You must set rpcuser and rpcpassword to secure the JSON-RPC api
     # Please make rpcpassword to something secure, `5gKAgrJv8CQr2CGUhjVbBFLSj29HnE6YGXvfykHJzS3k` for example.
     # Listen for JSON-RPC connections on <port> (default: 8332 or testnet: 18332)
-    rpcuser=INVENT_A_UNIQUE_USERNAME
-    rpcpassword=INVENT_A_UNIQUE_PASSWORD
-    rpcport=18332
+    rpcuser=deployuser
+    rpcpassword=deploypass
+    rpcport=8332
 
     # Notify when receiving coins
     walletnotify=/usr/local/sbin/rabbitmqadmin publish routing_key=peatio.deposit.coin payload='{"txid":"%s", "channel_key":"satoshi"}'
@@ -140,7 +140,7 @@ Install nginx and passenger
 
 Next, we need to update the Nginx configuration to point Passenger to the version of Ruby that we're using. You'll want to open up /etc/nginx/nginx.conf in your favorite editor,
 
-    sudo vim /etc/nginx/nginx.conf
+    sudo nano /etc/nginx/nginx.conf
 
 find the following lines, and uncomment them:
 
@@ -191,14 +191,14 @@ A JavaScript Runtime is needed for Asset Pipeline to work. Any runtime will do b
 More details to visit [pusher official website](http://pusher.com)
 
     # uncomment Pusher related settings
-    vim config/application.yml
+    nano config/application.yml
 
 **Setup bitcoind rpc endpoint**
 
     # replace username:password and port with the one you set in
     # username and password should only contain letters and numbers, do not use email as username
     # bitcoin.conf in previous step
-    vim config/currencies.yml
+    nano config/currencies.yml
 
 **Config database settings**
 
