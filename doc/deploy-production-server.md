@@ -49,8 +49,8 @@ Installing [rbenv](https://github.com/sstephenson/rbenv) using a Installer
 
 Install Ruby through rbenv:
 
-    rbenv install 2.2.1
-    rbenv global 2.2.1
+    rbenv install 2.2.2
+    rbenv global 2.2.2
 
 Install bundler
 
@@ -202,7 +202,7 @@ More details to visit [pusher official website](http://pusher.com)
 
 **Config database settings**
 
-    vim config/database.yml
+    nano config/database.yml
 
     # Initialize the database and load the seed data
     bundle exec rake db:setup
