@@ -3,7 +3,7 @@ defaults: &defaults
   # sites hosts
   # session expire seconds
   # admin role account
-  URL_HOST: localhost:3000
+  URL_HOST: localhost
   URL_SCHEMA: http
   SESSION_EXPIRE: 60
   ADMIN: 'bilal_haider032@yahoo.com,bilal_haider032@outlook.com'
