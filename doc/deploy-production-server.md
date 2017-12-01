@@ -78,7 +78,7 @@ Please follow instructions here: https://www.rabbitmq.com/install-debian.html
 2-- Install RabbitMQ
 
     wget https://packages.erlang-solutions.com/erlang/esl-erlang/FLAVOUR_1_general/esl-erlang_20.1-1~ubuntu~trusty_amd64.deb
-    apt install esl-erlang_20.1-1~ubuntu~trusty_amd64.deb
+    sudo apt install esl-erlang_20.1-1~ubuntu~trusty_amd64.deb
     
     echo "deb https://dl.bintray.com/rabbitmq/debian trusty main" | sudo tee /etc/apt/sources.list.d/bintray.rabbitmq.list
     wget -O- https://www.rabbitmq.com/rabbitmq-release-signing-key.asc | sudo apt-key add -
