@@ -65,7 +65,8 @@ Install bundler
 ### 4. Install Redis
 
 Be sure to install the latest stable Redis, as the package in the distro may be a bit old:
-    apt-get install software-properties-common
+    
+    sudo apt-get install software-properties-common
     sudo apt-add-repository -y ppa:rwky/redis
     sudo apt-get update
     sudo apt-get install redis-server
