@@ -1,3 +1,8 @@
+.row
+  .col-lg-12
+    h1.page-header
+      | ID Documents
+
 .panel.panel-primary
   .panel-heading: span = t('.verify_account')
   = table_for(@id_documents, class: 'table table-condensed table-hover') do |t|
