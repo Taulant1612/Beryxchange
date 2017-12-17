@@ -1,40 +1,38 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="funds">
-  <head>
-    <%- stylesheet = content_for?(:stylesheet) ? yield(:stylesheet) : "application" %>
-
-    <link href="/favicon.ico" rel="shortcut icon"></link>
-    <%= include_gon %>
-    <%= stylesheet_link_tag stylesheet, media: "all" %>
-    <%= javascript_include_tag "locales/#{I18n.locale}" %>
-    <%= javascript_include_tag "funds" %>
-    <%= yield(:scripts) if content_for?(:scripts) %>
-    <%= render 'shared/html5' %>
-    <%= render 'shared/meta' %>
-    <%= csrf_meta_tags %>
-  </head>
-
-  <body id="<%= body_id %>" data-lang="<%= "#{locale_name}" %>">
-
-    <div id="wrap">
-      <%- if content_for?(:header) %>
-        <%= yield(:header) %>
-      <%- else %>
-        <%= render 'shared/header' %>
-      <%- end %>
-
-      <div class='container'>
-        <%= yield %>
+<!DOCTYPE html> <html lang="en">
+   <head>
+      <link href="/favicon.ico" rel="shortcut icon" />
+      <%= include_gon %>
+      <%= render 'shared/html5' %>
+      <%= render 'shared/meta' %>
+   <%= javascript_include_tag "funds" %>
+      <%= csrf_meta_tags %>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Pakistan's No 1. Crypto Exchange</title>
+        <!-- Bootstrap core CSS -->
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Custom fonts for this template -->
+        <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' 
+type='text/$
+        <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' 
+type='text/css'>
+        <!-- Plugin CSS -->
+        <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="css/creative.min.css" rel="stylesheet">
+   </head>
+   <body id="page-top">
+      
+      <div id="container">
+         <%= render 'shared/header' %>
+         <%= render 'shared/frame' %>
+         <div id="push">
+         </div>
       </div>
-      <div id="push"></div>
-    </div>
-
-    <%- if content_for?(:footer) %>
-      <%= yield(:footer) %>
-    <%- else %>
       <%= render 'shared/footer' %>
-    <%- end %>
-
-  </body>
+      
+   </body>
 </html>
-

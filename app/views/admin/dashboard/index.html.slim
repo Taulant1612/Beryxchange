@@ -1,5 +1,86 @@
 .row
-  .col-xs-24
+  .col-lg-12
+    h1.page-header
+      | Dashboard
+.row
+  .col-lg-3.col-md-6
+    .panel.panel-primary
+      .panel-heading
+        .row
+          .col-xs-3
+            i.fa.fa-users.fa-5x
+          .col-xs-9.text-right
+            .huge
+              = @register_count
+            div
+              | Members!
+      a[href="#"]
+
+      .panel-footer
+        span.pull-left
+          | View Details
+        span.pull-right
+          i.fa.fa-arrow-circle-right
+        .clearfix
+  .col-lg-3.col-md-6
+    .panel.panel-green
+      .panel-heading
+        .row
+          .col-xs-3
+            i.fa.fa-tasks.fa-5x
+          .col-xs-9.text-right
+            .huge
+              | 12
+            div
+              | Withdrawal Requests!
+      a[href="#"]
+
+      .panel-footer
+        span.pull-left
+          | View Details
+        span.pull-right
+          i.fa.fa-arrow-circle-right
+        .clearfix
+  .col-lg-3.col-md-6
+    .panel.panel-yellow
+      .panel-heading
+        .row
+          .col-xs-3
+            i.fa.fa-shopping-cart.fa-5x
+          .col-xs-9.text-right
+            .huge
+              | 124
+            div
+              | Balance!
+      a[href="#"]
+
+      .panel-footer
+        span.pull-left
+          | View Details
+        span.pull-right
+          i.fa.fa-arrow-circle-right
+        .clearfix
+  .col-lg-3.col-md-6
+    .panel.panel-red
+      .panel-heading
+        .row
+          .col-xs-3
+            i.fa.fa-support.fa-5x
+          .col-xs-9.text-right
+            .huge
+              | 13
+            div
+              | Support Tickets!
+      a[href="#"]
+
+      .panel-footer
+        span.pull-left
+          | View Details
+        span.pull-right
+          i.fa.fa-arrow-circle-right
+        .clearfix
+.row
+  .col-lg-8
     .panel.panel-primary
       .panel-heading Currencies Summary
       .panel-body
@@ -31,8 +112,7 @@
                   td.text-right N/A
       .panel-footer
         span Tips: Locked + Balance = Sum | Hot-Wallet + Cold-Wallet = Sum
-.row
-  .col-xs-12: .panel.panel-primary
+  .col-lg-4: .panel.panel-primary
     .panel-heading Daemon Statuses
     .panel-body
       table.table.table-condensed
@@ -48,7 +128,8 @@
               - else
                 td.text-info = daemon
                 td.text-info = state
-  .col-xs-12: .panel.panel-primary
+.row
+  .col-lg-12: .panel.panel-primary
     .panel-heading Exchange Summary
     .panel-body
       table.table.table-condensed
