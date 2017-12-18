@@ -62,11 +62,6 @@ production:
   TWILIO_TOKEN: YOUR_TWILIO_TOKEN
 
 
-  # Third party auth
-
-  # Weibo
-  # --------------------------------------------------------------
-  WEIBO_AUTH: off # on/off
 
   # chat setting
   # --------------------------------------------------------------
