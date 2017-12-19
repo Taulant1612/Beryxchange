@@ -86,7 +86,7 @@ Please follow instructions here: https://www.rabbitmq.com/install-debian.html
 
     mkdir -p ~/.bitcoin
     touch ~/.bitcoin/bitcoin.conf
-    vim ~/.bitcoin/bitcoin.conf
+    sudo nano ~/.bitcoin/bitcoin.conf
 
 Insert the following lines into the bitcoin.conf, and replce with your username and password.
 
@@ -140,7 +140,7 @@ A JavaScript Runtime is needed for Asset Pipeline to work. Any runtime will do b
 
 **Clone the project**
 
-    git clone git://github.com/peatio/peatio.git
+    git clone git://github.com/berycoin-project/beryxchange.git
     cd peatio
     bundle install
 
@@ -155,18 +155,18 @@ A JavaScript Runtime is needed for Asset Pipeline to work. Any runtime will do b
 More details to visit [pusher official website](http://pusher.com)
 
     # uncomment Pusher related settings
-    vim config/application.yml
+    sudo nano config/application.yml
 
 **Setup bitcoind rpc endpoint**
 
     # replace username:password and port with the one you set in
     # username and password should only contain letters and numbers, do not use email as username
     # bitcoin.conf in previous step
-    vim config/currencies.yml
+    sudo nano config/currencies.yml
 
 **Config database settings**
 
-    vim config/database.yml
+    sudo nano config/database.yml
 
     # Initialize the database and load the seed data
     bundle exec rake db:setup
