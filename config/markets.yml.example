@@ -8,3 +8,34 @@
   ask: {fee: 0, currency: btc, fixed: 4}
   sort_order: 1
   #visible: false     # default to true
+- id: ltccny
+  code: 4
+  #name: LTC/CNY      # default name
+  base_unit: ltc
+  quote_unit: cny
+  #price_group_fixed: 1 # aggregate price levels in orderbook
+  bid: {fee: 0, currency: cny, fixed: 2}
+  ask: {fee: 0, currency: ltc, fixed: 4}
+  sort_order: 1
+  #visible: false     # default to true
+- id: brccny
+  code: 5
+  #name: BRC/CNY      # default name
+  base_unit: brc
+  quote_unit: cny
+  #price_group_fixed: 1 # aggregate price levels in orderbook
+  bid: {fee: 0, currency: cny, fixed: 2}
+  ask: {fee: 0, currency: brc, fixed: 4}
+  sort_order: 1
+  #visible: false     # default to true
+- id: mtrcny
+  code: 6
+  #name: MTR/CNY      # default name
+  base_unit: mtr
+  quote_unit: cny
+  #price_group_fixed: 1 # aggregate price levels in orderbook
+  bid: {fee: 0, currency: cny, fixed: 2}
+  ask: {fee: 0, currency: mtr, fixed: 4}
+  sort_order: 1
+  #visible: false     # default to true
+

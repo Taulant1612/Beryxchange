@@ -4,10 +4,12 @@ module Private
 
     def index
       @cny_assets  = Currency.assets('cny')
-      @cny_assets  = Currency.assets('pkr')
+      @pkr_assets  = Currency.assets('pkr')
       @btc_proof   = Proof.current :btc
       @cny_proof   = Proof.current :cny
+      @ltc_proof   = Proof.current :ltc
       @brc_proof   = Proof.current :brc
+      @mtr_proof   = Proof.current :mtr
       @pkr_proof   = Proof.current :pkr
 
       if current_user
