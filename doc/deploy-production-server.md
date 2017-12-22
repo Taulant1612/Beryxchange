@@ -147,15 +147,11 @@ Install nginx and passenger
 
 Next, we need to update the Nginx configuration to point Passenger to the version of Ruby that we're using. You'll want to open up /etc/nginx/nginx.conf in your favorite editor,
 
-    sudo nano /etc/nginx/nginx.conf
+    sudo nano /etc/nginx/passenger.conf
 
 find the following lines, and uncomment them:
 
     passenger_root /usr/lib/ruby/vendor_ruby/phusion_passenger/locations.ini;
-    passenger_ruby /usr/bin/ruby;
-
-update the second line to read:
-
     passenger_ruby /home/deploy/.rbenv/shims/ruby;
 
 ### 8. Install JavaScript Runtime
@@ -178,9 +174,9 @@ A JavaScript Runtime is needed for Asset Pipeline to work. Any runtime will do b
 
 ##### Clone the Source
 
-    mkdir -p ~/peatio
-    git clone https://github.com/berycoin-project/peatio.git ~/peatio/current
-    cd peatio/current
+    mkdir -p ~/beryxchange
+    git clone https://github.com/berycoin-project/beryxchange.git ~/beryxchange/current
+    cd beryxchange/current
 
     ＃ Install dependency gems
     bundle install --without development test --path vendor/bundle
@@ -246,7 +242,7 @@ For security reason, you must setup SSL Certificate for production environment, 
 **Passenger:**
 
     sudo rm /etc/nginx/sites-enabled/default
-    sudo ln -s /home/deploy/peatio/current/config/nginx.conf /etc/nginx/conf.d/peatio.conf
+    sudo ln -s /home/deploy/beryxchange/current/config/nginx.conf /etc/nginx/conf.d/peatio.conf
     sudo service nginx restart
 
 **Liability Proof**
