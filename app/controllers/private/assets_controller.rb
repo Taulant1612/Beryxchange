@@ -17,6 +17,8 @@ module Private
         @cny_account = current_user.accounts.with_currency(:cny).first
         @brc_account = current_user.accounts.with_currency(:brc).first
         @pkr_account = current_user.accounts.with_currency(:pkr).first
+        @ltc_account = current_user.accounts.with_currency(:ltc).first
+        @mtr_account = current_user.accounts.with_currency(:mtr).first
       end
     end
 
