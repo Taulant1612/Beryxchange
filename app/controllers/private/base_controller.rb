@@ -1,5 +1,7 @@
 module Private
   class BaseController < ::ApplicationController
+    layout 'members'
+ 
     before_action :check_email_nil
     before_filter :no_cache, :auth_member!
 

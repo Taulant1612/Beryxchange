@@ -112,31 +112,34 @@
                   td.text-right N/A
       .panel-footer
         span Tips: Locked + Balance = Sum | Hot-Wallet + Cold-Wallet = Sum
-  .col-lg-4: .panel.panel-primary
-    .panel-heading Daemon Statuses
-    .panel-body
-      table.table.table-condensed
-        thead: tr
-          th Name
-          th State
-        tbody
-          - @daemon_statuses.each do |daemon, state|
+
+  .col-lg-4
+  
+    .panel.panel-primary
+      .panel-heading Exchange Summary
+      .panel-body
+        table.table.table-condensed
+          thead: tr
+            th Index
+            th Count
+          tbody
             tr
-              - if state == :not_exists
-                td.text-danger: b = daemon
-                td.text-danger: b = state
-              - else
-                td.text-info = daemon
-                td.text-info = state
-.row
-  .col-lg-12: .panel.panel-primary
-    .panel-heading Exchange Summary
-    .panel-body
-      table.table.table-condensed
-        thead: tr
-          th Index
-          th Count
-        tbody
-          tr
-            td Register Count
-            td = @register_count
+              td Register Count
+              td = @register_count
+  
+    .panel.panel-primary
+      .panel-heading Daemon Statuses
+      .panel-body
+        table.table.table-condensed
+          thead: tr
+            th Name
+            th State
+          tbody
+            - @daemon_statuses.each do |daemon, state|
+              tr
+                - if state == :not_exists
+                  td.text-danger: b = daemon
+                  td.text-danger: b = state
+                - else
+                  td.text-info = daemon
+                  td.text-info = state

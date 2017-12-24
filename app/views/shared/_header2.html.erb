@@ -1,0 +1,57 @@
+<div class="navbar-default navbar-static sidebar" role="navigation">
+    <div class="sidebar-nav navbar-collapse">
+        <ul class="nav" id="side-menu">
+            <li style="padding:10px">
+                 <center>
+                     <img src="../img/header.jpg" alt="Logo" class="img-circle" height="150px" width="150px">
+                     <h4>Hi, 
+                        <%= current_user.email || current_user.nickname if current_user %>
+                     </h4>
+                 </center>
+            </li>
+            <li> 
+                <%=  render partial: 'shared/header_account_balance' if current_user && controller_name == 'markets' %>
+            </li>
+            <li>
+                <%=  render partial: 'shared/header_profile_setting' if current_user %>
+            </li>
+            <li>
+                <%=  top_nav_link(t('header.signin'), signin_path, '') unless current_user %>
+            </li>
+            <li>
+                <%=  top_nav_link(t('header.signup'), signup_path, '') unless current_user %>
+            </li>
+            <li>
+                <%= top_nav_link(t('header.market'), market_path(current_market.id), 'exchange', target: true) %>
+            </li>
+            <li>
+                <%= top_nav_link(t('header.funds'), funds_path, 'money', controllers: ['funds']) if current_user %>
+            </li>
+            <li>
+                <%= top_nav_link(t('header.assets'), exchange_assets_path, 'bar-chart-o') %>
+            </li>
+            <li>
+                <%= top_nav_link(t('header.history'), order_history_path, 'book', controllers: ['history']) if current_user %>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class="fa fa-group fa-fw"></i> Chat
+                    <span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="#">Chat Rooms</a>
+                    </li>
+                    <li>
+                        <a href="#">Forums</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+
+
+        </ul>
+    </div>
+    <!-- /.sidebar-collapse -->
+</div>

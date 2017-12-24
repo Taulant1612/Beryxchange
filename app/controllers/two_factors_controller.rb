@@ -1,4 +1,6 @@
 class TwoFactorsController < ApplicationController
+  
+  
   before_action :auth_member!
   before_action :two_factor_required!
 

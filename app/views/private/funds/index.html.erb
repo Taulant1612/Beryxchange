@@ -1,35 +1,47 @@
-<h1 class="page-title"><%= t("header.funds") %></h1>
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header">
+      <i class="fa fa-users fa-fw"></i>
+      <span>
+        <%= t("header.funds") %>
+      </span>
+    </h1>
+  </div>
+</div>
 
-<div class="panel panel-default">
-  <div class="panel-body panel-currencies">
-
-    <div class='row'>
-      <div class='col-xs-8'>
-
+<div class="row">
+  <div class="col-lg-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">| Currencies </div>
+      <div class="panel-body panel-currencies">
         <div class="currencies-container">
           <accounts></accounts>
         </div>
       </div>
-
-      <div class='col-xs-16'>
+    </div>
+  </div>
+  </div>
+<div class="row">
+  <div class="col-lg-12" id="view">
+    <div class="panel panel-default">
+      <div class="panel-heading">| Details </div>
+      <div class="panel-body panel-details">
         <div class="details-container">
           <!-- {{template 'flash'}} -->
           <ui-view></ui-view>
         </div>
       </div>
-
-    </div><!-- .row -->
-
+    </div>
   </div>
 </div>
 
-<% content_for :scripts do %>
-  <script type="text/javascript" charset="utf-8">
-    $(window).load(function(){
-      $.ajax({
-        type: "post",
-        url: "<%= gen_address_funds_path %>"
-      })
-    });
-  </script>
-<% end %>
+  <% content_for :scripts do %>
+    <script type="text/javascript" charset="utf-8">
+      $(window).load(function () {
+        $.ajax({
+          type: "post",
+          url: "<%= gen_address_funds_path %>"
+        })
+      });
+    </script>
+    <% end %>

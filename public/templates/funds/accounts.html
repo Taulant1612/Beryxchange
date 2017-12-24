@@ -1,17 +1,44 @@
-<table class="table table-currencies" ng-repeat="account in accounts" bind="accounts">
-  <tr class="currency-item" ng-class="{selected: accountsCtrl.isSelected(account.currency),
-    'deposit-now': accountsCtrl.isDeposit(),
-    'withdraw-now': accountsCtrl.isWithdraw() }"
-    data-currency="{{account.currency}}">
+<div class="col-lg-3 col-md-6" ng-repeat="account in accounts" bind="accounts">
 
-    <td class="currency-logo"><img ng-src="/icon-{{account.currency}}.png" alt=""><span class="currency-symbol">{{ account.currency | uppercase }}</span></td>
-    <td class="currency-balance-col">
-      <p class="currency-balance"><span class="currency-sign"></span>{{account.balance | round_down }}</p>
-      <span class="currency-balance-locked"><i class="fa fa-lock"></i> {{account.locked}}</span>
-    </td>
-    <td class="currency-actions">
-      <p class="currency-deposit"><a href="#" ng-click="accountsCtrl.deposit(account); $event.preventDefault()" >{{ 'funds.deposit' | t }}</a></p>
-      <p class="currency-withdraw"><a href="#" ng-click="accountsCtrl.withdraw(account); $event.preventDefault()" >{{ 'funds.withdraw' | t }}</a></p>
-    </td>
-  </tr>
-</table>
+  <div class="panel panel-default">
+
+    <div class="panel-heading">
+
+      <div class="row">
+        <ul style="list-style:none;" class="currency-item" ng-class="{selected: accountsCtrl.isSelected(account.currency),
+          'deposit-now': accountsCtrl.isDeposit(),
+          'withdraw-now': accountsCtrl.isWithdraw() }" data-currency="{{account.currency}}">
+          <div class="col-xs-3">
+            <li class="currency-logo">
+              <img ng-src="/icon-{{account.currency}}.png" alt="">
+              <span class="currency-symbol">{{ account.currency | uppercase }}</span>
+            </li>
+          </div>
+          <div class="col-xs-9 text-right">
+
+            <div class="huge">
+              <li class="currency-balance-col">
+                <p class="currency-balance">
+                  <span class="currency-sign"></span>{{account.balance | round_down }}</p>
+                <span class="currency-balance-locked">
+                  <i class="fa fa-lock"></i> {{account.locked}}</span>
+              </li>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+    <div class="panel-footer">
+      <div>
+        <span class="currency-deposit pull-left">
+          <a ng-href="#view" class="btn btn-success" ng-click="accountsCtrl.deposit(account); $event.preventDefault()">{{ 'funds.deposit' | t }}</a>
+        </span>
+        <span class="currency-withdraw pull-right">
+          <a ng-href="#view" class="btn btn-info" ng-click="accountsCtrl.withdraw(account); $event.preventDefault()">{{ 'funds.withdraw' | t }}</a>
+        </span>
+      </div>
+      <div class="clearfix">
+      </div>
+    </div>
+  </div>
+</div>
