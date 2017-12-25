@@ -12,7 +12,7 @@
       .panel-heading
         h2.panel-title = guide_panel_title
       .panel-body
-        .row
+        .container
           #guide.col-lg-4
             - if content_for?(:guide_title)
               = yield(:guide_title)

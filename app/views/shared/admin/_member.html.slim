@@ -1,7 +1,7 @@
 .panel.panel-info
   .panel-heading
     span = t('.member_info')
-    = link_to 'View', url_for([:admin, member]), class: 'pull-right', target: '_blank'
+    = link_to 'View', url_for([:admin, member]), class: 'pull-left', target: '_blank'
   .panel-body
     = description_for :member do
       = item_for member, :name

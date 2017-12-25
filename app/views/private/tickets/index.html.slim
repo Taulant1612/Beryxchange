@@ -13,11 +13,14 @@
              h4 class = (t.comments.unread_by(current_user).any? ? ["unread", ""] : [""])
          .panel-body style = "padding-left: 50px;"
             .row
-               .col-xs-20
+               .col-lg-12
                    h4 = link_to t.title_for_display, ticket_path(t)
             .row
-                    .col-xs-16
-                      p = t.content
-                    .col-xs-8
-                      i.fa.fa-clock-o.text-info
-                      span = time_ago_in_words t.created_at
+                .col-lg-12
+                   p = t.content
+                   h4.btn.btn-default
+                     = link_to "See Replies", ticket_path(t)
+                .col-lg-8
+                   i.fa.fa-clock-o.text-info
+                   span = time_ago_in_words t.created_at
+                   

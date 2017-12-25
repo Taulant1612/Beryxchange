@@ -4,7 +4,7 @@
 
     .panel.panel-default#transactions
       .panel-body
-        .col-xs-24
+        .col-lg-24
           table.table.table-condensed.table-striped
             thead: tr
               th = t('.type')
@@ -15,6 +15,6 @@
               th = t('.txid')
             tbody.list
               = render partial: 'transaction', collection: @transactions
-          .pull-right
+          .pull-left
             = paginate @transactions
 

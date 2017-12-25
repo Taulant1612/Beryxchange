@@ -3,12 +3,12 @@
     h2.panel-title = t('.panel_title')
   .panel-body
     .row
-      #guide.col-xs-8
+      #guide.col-lg-8
         h3 = t('.title')
         p.text-ignore = t('.intro')
 
         p = link_to t('.oauth'), '/documents/oauth', target: '_blank'
-      #content.col-xs-16
+      #content.col-lg-16
         table.table.table-condensed.table-striped
           thead: tr
             th class='oauth-app-name' = t('.oauth_app_name')

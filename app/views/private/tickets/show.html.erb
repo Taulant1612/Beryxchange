@@ -1,0 +1,95 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>
+                    <%= link_to t("private.tickets.close"), close_ticket_path(@ticket), method: :patch, confirm: t("private.tickets.close_confirm"), class: "btn btn-danger" %>
+                        <%= link_to t("back"), tickets_path, class: "btn btn-info" %>
+                </h4>
+            </div>
+
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h4>
+                                    <%= "#{I18n.t('private.tickets.me')} - #{@ticket.title}" %>
+                                </h4>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <p>
+                                            <%= @ticket.content %>
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <i class="fa fa-clock-o text-info">
+                                            <span>
+                                                <%= time_ago_in_words @ticket.created_at %>
+                                            </span>
+                                        </i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <% @comments.each do |c| %>
+                        <div class="col-lg-10">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4>
+                                        <%= "#{member_tittle(c.author)}" %>
+                                    </h4>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <p>
+                                                <%= c.content %>
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <i class="fa fa-clock-o text-info">
+                                                <span>
+                                                    <%= time_ago_in_words c.created_at %>
+                                                </span>
+                                            </i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <% end %>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <%= simple_form_for @comment, url: ticket_comments_path(@ticket.id) do |f|%>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4>
+                                        "Reply"
+                                    </h4>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-lg-10">
+                                            <span>
+                                                <%= f.input :content, label: false,  input_html: { rows: 10 } %>
+                                            </span>
+                                            <hr class="split">
+                                            <%= f.button :wrapped %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

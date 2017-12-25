@@ -7,9 +7,9 @@
     .panel.panel-primary
       .panel-heading
         .row
-          .col-xs-3
+          .col-lg-3
             i.fa.fa-users.fa-5x
-          .col-xs-9.text-right
+          .col-lg-9.text-right
             .huge
               = @register_count
             div
@@ -19,16 +19,16 @@
       .panel-footer
         span.pull-left
           | View Details
-        span.pull-right
+        span.pull-left
           i.fa.fa-arrow-circle-right
         .clearfix
   .col-lg-3.col-md-6
     .panel.panel-green
       .panel-heading
         .row
-          .col-xs-3
+          .col-lg-3
             i.fa.fa-tasks.fa-5x
-          .col-xs-9.text-right
+          .col-lg-9.text-right
             .huge
               | 12
             div
@@ -38,16 +38,16 @@
       .panel-footer
         span.pull-left
           | View Details
-        span.pull-right
+        span.pull-left
           i.fa.fa-arrow-circle-right
         .clearfix
   .col-lg-3.col-md-6
     .panel.panel-yellow
       .panel-heading
         .row
-          .col-xs-3
+          .col-lg-3
             i.fa.fa-shopping-cart.fa-5x
-          .col-xs-9.text-right
+          .col-lg-9.text-right
             .huge
               | 124
             div
@@ -57,16 +57,16 @@
       .panel-footer
         span.pull-left
           | View Details
-        span.pull-right
+        span.pull-left
           i.fa.fa-arrow-circle-right
         .clearfix
   .col-lg-3.col-md-6
     .panel.panel-red
       .panel-heading
         .row
-          .col-xs-3
+          .col-lg-3
             i.fa.fa-support.fa-5x
-          .col-xs-9.text-right
+          .col-lg-9.text-right
             .huge
               | 13
             div
@@ -76,7 +76,7 @@
       .panel-footer
         span.pull-left
           | View Details
-        span.pull-right
+        span.pull-left
           i.fa.fa-arrow-circle-right
         .clearfix
 .row
@@ -87,29 +87,29 @@
         table.table.table-condensed
           thead: tr
             th Name
-            th.text-right Locked
-            th.text-right Balance
-            th.text-right Sum
-            th.text-right Hot-Wallet Balance
-            th.text-right Cold-Wallet Balance
+            th.text-left Locked
+            th.text-left Balance
+            th.text-left Sum
+            th.text-left Hot-Wallet Balance
+            th.text-left Cold-Wallet Balance
 
           tbody
             - @currencies_summary.each do |c|
               tr
                 td: b = c[:name]
-                td.text-right = c[:locked]
-                td.text-right = c[:balance]
-                td.text-right = c[:sum]
+                td.text-left = c[:locked]
+                td.text-left = c[:balance]
+                td.text-left = c[:sum]
 
                 - if c[:coinable]
-                  td.text-right = c[:hot]
+                  td.text-left = c[:hot]
                   - if c[:hot] == 'N/A'
-                    td.text-right = c[:hot]
+                    td.text-left = c[:hot]
                   - else
-                    td.text-right = c[:sum] - c[:hot]
+                    td.text-left = c[:sum] - c[:hot]
                 - else
-                  td.text-right N/A
-                  td.text-right N/A
+                  td.text-left N/A
+                  td.text-left N/A
       .panel-footer
         span Tips: Locked + Balance = Sum | Hot-Wallet + Cold-Wallet = Sum
 

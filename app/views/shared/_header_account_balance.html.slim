@@ -7,19 +7,19 @@ li.dropdown.account-balance
       - next if not account.currency
       .account-wrap.clearfix
         .account class='#{account.currency}': .row
-          .col-xs-24.text-right
+          .col-lg-24.text-left
             i.fa.fa-lock
             code: span.locked
             i.fa.fa-plus
             code: span.balance
         hr
         .account class='#{account.currency}': .row
-          .col-xs-6
+          .col-lg-6
             span.account-name
               b = "#{account.currency_obj.code_text}"
               br
               b = "#{account.currency_obj.name_text}"
-          .col-xs-18.text-right
+          .col-lg-18.text-left
             span.total-title = "#{t('header.total')}: "
             code
               span.total

@@ -1,5 +1,5 @@
 .row
-  .col-xs-12
+  .col-lg-12
     .panel.panel-primary
       .panel-heading
         span = t('.withdraw', sn: @materiacoin.id)
@@ -17,7 +17,7 @@
           hr.split
           = item_for @materiacoin, :remark
           hr.split
-          ul.list-inline.pull-right
+          ul.list-inline.pull-left
             - if @materiacoin.may_reject?
               li
                 = link_to t('.reject'), url_for([:admin, @materiacoin]), class: 'btn btn-danger', method: 'DELETE', confirm: t('.reject_confirm')
@@ -25,6 +25,6 @@
               li
                 = link_to t('.process'), url_for([:admin, @materiacoin]), class: 'btn btn-primary', method: 'PATCH'
 
-  .col-xs-12
+  .col-lg-12
     = render partial: 'shared/admin/member', locals: {member: @materiacoin.member}
     = render partial: 'shared/admin/account', locals: {account: @materiacoin.account}

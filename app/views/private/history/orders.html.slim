@@ -4,7 +4,7 @@
 
     .panel.panel-default#orders
       .panel-body
-        .col-xs-24
+        .col-lg-24
           table.table.table-condensed.table-striped
             thead: tr
               th = t('.id')
@@ -18,5 +18,5 @@
               th = t('.timestamp')
             tbody.list
               = render partial: 'order', collection: @orders
-          .pull-right
+          .pull-left
             = paginate @orders

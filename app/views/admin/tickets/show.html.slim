@@ -11,18 +11,18 @@ br
 ul.list-group
   li.list-group-item
     .row.row-middle
-      .col-xs-12
+      .col-lg-12
         .row.row-middle
-          .col-xs-12
+          .col-lg-12
             h4 = "#{@ticket.title}"
-          .col-xs-6
+          .col-lg-6
         .row
-          .col-xs-12
+          .col-lg-12
             p.text-ignore = @ticket.content
         .row
-          .col-xs-12
+          .col-lg-12
             span = "#{I18n.t("private.tickets.from")}: #{@ticket.author.email}"
-          .col-xs-5
+          .col-lg-5
             i.fa.fa-clock-o.text-info
             span = time_ago_in_words @ticket.created_at
   h3 = t('admin.tickets.replies')
@@ -30,14 +30,14 @@ ul.list-group
     br
     li.list-group-item
       .row.row-middle
-        .col-xs-12
+        .col-lg-12
           .row
-            .col-xs-12
+            .col-lg-12
               p.text-ignore = c.content
           .row
-            .col-xs-12
+            .col-lg-12
               span = "#{I18n.t("private.tickets.from")}: #{c.author.email}"
-            .col-xs-5
+            .col-lg-5
               i.fa.fa-clock-o.text-info
               span = time_ago_in_words c.created_at
 

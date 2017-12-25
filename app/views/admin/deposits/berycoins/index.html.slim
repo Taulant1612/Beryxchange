@@ -16,4 +16,4 @@
       span = ' / '
       = link_to t('.accept'), url_for([:admin, x]), method: 'PATCH', confirm: t('.accept_confirm')
 
-.pull-right = paginate @berycoins
+.pull-left = paginate @berycoins

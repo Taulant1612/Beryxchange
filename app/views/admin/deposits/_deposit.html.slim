@@ -23,7 +23,7 @@
 
 = detail_section_tag t('.action_title')
 
-.pull-right
+.pull-left
   - if deposit.may_submit?
     = link_to t('.submit'), admin_deposit_path(deposit), method: :patch, class: 'btn btn-default'
   - if deposit.may_accept?

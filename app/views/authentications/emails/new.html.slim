@@ -1,6 +1,6 @@
 = simple_form_for :email, url: authentications_emails_path, method: :post do |f|
   = f.input :address, label: t('.email_address')
-  = f.button :submit, t('.save'), class: "btn btn-default btn-lg pull-right btn"
+  = f.button :submit, t('.save'), class: "btn btn-default btn-lg pull-left btn"
 
 = content_for :guide_title do
   h3

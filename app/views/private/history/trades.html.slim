@@ -4,7 +4,7 @@
 
     .panel.panel-default#trades
       .panel-body
-        .col-xs-24
+        .col-lg-24
           table.table.table-condensed.table-striped
             thead: tr
               th = t('.side')
@@ -16,5 +16,5 @@
               th = t('.price')
             tbody.list
               = render partial: 'trade', collection: @trades
-          .pull-right
+          .pull-left
             = paginate @trades
