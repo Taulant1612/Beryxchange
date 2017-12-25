@@ -74,19 +74,21 @@ Be sure to install the latest stable Redis, as the package in the distro may be 
 ### 5. Install RabbitMQ
 
 Please follow instructions here: https://www.rabbitmq.com/install-debian.html
-1-- Install Erlang
-2-- Install RabbitMQ
+1-- Download Erlang
+2-- Install using gdebi
+3-- Install RabbitMQ
 
     wget https://packages.erlang-solutions.com/erlang/esl-erlang/FLAVOUR_1_general/esl-erlang_20.1-1~ubuntu~trusty_amd64.deb
-    sudo apt install esl-erlang_20.1-1~ubuntu~trusty_amd64.deb
+    
+    sudo apt install gdebi
+    sudo gdebi esl-erlang_20.1-1~ubuntu~trusty_amd64.deb
     
     echo "deb https://dl.bintray.com/rabbitmq/debian trusty main" | sudo tee /etc/apt/sources.list.d/bintray.rabbitmq.list
     wget -O- https://www.rabbitmq.com/rabbitmq-release-signing-key.asc | sudo apt-key add -
 
     sudo apt-get update
     sudo apt-get install rabbitmq-server
-
-    sudo rabbitmq-plugins enable rabbitmq_management
+    
     sudo service rabbitmq-server restart
     wget http://localhost:15672/cli/rabbitmqadmin
     chmod +x rabbitmqadmin
