@@ -43,10 +43,10 @@ SimpleForm.setup do |config|
 
     ## Inputs
     #
-    b.use :label, wrap_with: { tag: :div, class: 'col-xs-8 text-right'}
-    b.use :input, wrap_with: { tag: :div, class: 'col-xs-14'}
-    b.use :error, wrap_with: { tag: :span, class: 'error text-danger col-xs-14 col-xs-offset-8' }
-    b.use :hint,  wrap_with: { tag: :span, class: 'hint col-xs-14 col-xs-offset-8' }
+    b.use :label, wrap_with: { tag: :div, class: 'col-lg-4 text-left'}
+    b.use :input, wrap_with: { tag: :div, class: 'col-lg-8'}
+    b.use :error, wrap_with: { tag: :span, class: 'error text-danger col-lg-4' }
+    b.use :hint,  wrap_with: { tag: :span, class: 'hint col-lg-4' }
   end
 
   config.wrappers :search, class: 'form-group',
@@ -116,7 +116,7 @@ SimpleForm.setup do |config|
   # config.label_text = lambda { |label, required| "#{required} #{label}" }
 
   # You can define the class to use on all forms. Default is simple_form.
-  config.default_form_class = 'simple_form'
+  config.default_form_class = 'simple_form_bootstrap'
 
   # You can define which elements should obtain additional classes
   # config.generate_additional_classes_for = [:wrapper, :label, :input]
