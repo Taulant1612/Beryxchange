@@ -77,16 +77,28 @@ Be sure to install the latest stable Redis, as the package in the distro may be 
     sudo apt-get update
     sudo apt-get install redis-server
 
+
 ### 5. Install RabbitMQ
 
 Please follow instructions here: https://www.rabbitmq.com/install-debian.html
 
-    echo 'deb http://www.rabbitmq.com/debian/ testing main' | sudo tee /etc/apt/sources.list.d/rabbitmq.list
+1-- Download Erlang
+
+2-- Install using gdebi
+
+3-- Install RabbitMQ
+
+    wget https://packages.erlang-solutions.com/erlang/esl-erlang/FLAVOUR_1_general/esl-erlang_20.1-1~ubuntu~trusty_amd64.deb
+    
+    sudo apt install gdebi
+    sudo gdebi esl-erlang_20.1-1~ubuntu~trusty_amd64.deb
+    
+    echo "deb https://dl.bintray.com/rabbitmq/debian trusty main" | sudo tee /etc/apt/sources.list.d/bintray.rabbitmq.list
     wget -O- https://www.rabbitmq.com/rabbitmq-release-signing-key.asc | sudo apt-key add -
 
     sudo apt-get update
     sudo apt-get install rabbitmq-server
-
+    
     sudo rabbitmq-plugins enable rabbitmq_management
     sudo service rabbitmq-server restart
     wget http://localhost:15672/cli/rabbitmqadmin
@@ -103,7 +115,7 @@ Please follow instructions here: https://www.rabbitmq.com/install-debian.html
 
     mkdir -p ~/.bitcoin
     touch ~/.bitcoin/bitcoin.conf
-    nano ~/.bitcoin/bitcoin.conf
+    sudo nano ~/.bitcoin/bitcoin.conf
 
 Insert the following lines into the bitcoin.conf, and replce with your username and password.
 
@@ -149,16 +161,13 @@ Install nginx and passenger
 
 Next, we need to update the Nginx configuration to point Passenger to the version of Ruby that we're using. You'll want to open up /etc/nginx/nginx.conf in your favorite editor,
 
-    sudo nano /etc/nginx/nginx.conf
+    sudo nano /etc/nginx/passenger.conf
 
-find the following lines, and uncomment them:
+find the following lines, and update them with these:
 
     passenger_root /usr/lib/ruby/vendor_ruby/phusion_passenger/locations.ini;
-    passenger_ruby /usr/bin/ruby;
-
-update the second line to read:
-
     passenger_ruby /home/deploy/.rbenv/shims/ruby;
+
 
 ### 8. Install JavaScript Runtime
 
@@ -200,18 +209,18 @@ A JavaScript Runtime is needed for Asset Pipeline to work. Any runtime will do b
 More details to visit [pusher official website](http://pusher.com)
 
     # uncomment Pusher related settings
-    nano config/application.yml
+    sudo nano config/application.yml
 
 **Setup bitcoind rpc endpoint**
 
     # replace username:password and port with the one you set in
     # username and password should only contain letters and numbers, do not use email as username
     # bitcoin.conf in previous step
-    nano config/currencies.yml
+    sudo nano config/currencies.yml
 
 **Config database settings**
 
-    nano config/database.yml
+    sudo nano config/database.yml
 
     # Initialize the database and load the seed data
     bundle exec rake db:setup

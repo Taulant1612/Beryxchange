@@ -89,6 +89,7 @@ Please follow instructions here: https://www.rabbitmq.com/install-debian.html
     sudo apt-get update
     sudo apt-get install rabbitmq-server
     
+    sudo rabbitmq-plugins enable rabbitmq_management
     sudo service rabbitmq-server restart
     wget http://localhost:15672/cli/rabbitmqadmin
     chmod +x rabbitmqadmin
