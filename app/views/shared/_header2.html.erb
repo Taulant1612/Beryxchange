@@ -19,7 +19,7 @@
                 <%=  top_nav_link(t('header.signin'), signin_path, 'sign-in') unless current_user %>
             </li>
             <li>
-                <%=  top_nav_link(t('header.signup'), signup_path, 'space-shuttle') unless current_user %>
+                <%=  top_nav_link(t('header.signup'), signup_path, 'bar-chart') unless current_user %>
             </li>
             <li>
                 <%= top_nav_link(t('header.market'), market_path(current_market.id), 'bank', target: true) %>
