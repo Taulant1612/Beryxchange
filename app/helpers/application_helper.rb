@@ -96,7 +96,7 @@ module ApplicationHelper
         content_tag(:i, :class => "fa fa-#{link_icon}") do
           content_tag(:span, counter,class: "counter") if counter != 0
         end +
-        content_tag(:span, link_text)
+        content_tag(:span, " "+ link_text)
       end
     end
   end
