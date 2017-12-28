@@ -19,7 +19,11 @@
                 <%=  top_nav_link(t('header.signin'), signin_path, 'sign-in') unless current_user %>
             </li>
             <li>
+<<<<<<< HEAD
                 <%=  top_nav_link(t('header.signup'), signup_path, 'lock') unless current_user %>
+=======
+                <%=  top_nav_link(t('header.signup'), signup_path, 'bar-chart') unless current_user %>
+>>>>>>> e3fa5ae5f38f64d643eadcf1e43bc9799e23a443
             </li>
             <li>
                 <%= top_nav_link(t('header.market'), market_path(current_market.id), 'bank', target: true) %>
