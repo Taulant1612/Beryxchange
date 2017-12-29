@@ -1,11 +1,16 @@
 .row
-  .col-lg-6
-    = close_open_toggle_link
-    = link_to t('.new_ticket'), new_ticket_path, class: 'btn btn-default'
+  .col-lg-12
+    .panel.panel-default
+      .panel-heading
+        h3
+          i.fa.fa-lock Options
+      .panel-body
+        = close_open_toggle_link
+        = link_to t('.new_ticket'), new_ticket_path, class: 'btn btn-primary'
     br
     br
 .row
-  .col-lg-12
+  .col-lg-8
     - @tickets.each do |t|
       .panel.panel-default
          .panel-heading 
@@ -23,4 +28,16 @@
                 .col-lg-8
                    i.fa.fa-clock-o.text-info
                    span = time_ago_in_words t.created_at
-                   
+= content_for :guide_title do
+  .panel.panel-default
+    .panel-heading
+      h3
+       i.fa.fa-user Please Read this!
+= content_for :guide do
+    .panel-body
+      ul.list-group style = 'list-style:none;'
+        li.list-item Wait for at least 24 hours before posting a new Ticket
+        li.list-item Withdrawals are processed manually, they can take time
+        li.list-item Click your Tickets to see details ==>
+        li.list-item
+      p.text-warning We try our best to resolve problems as soon as possible, so kindly have patience.

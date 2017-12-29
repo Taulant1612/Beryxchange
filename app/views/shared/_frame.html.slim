@@ -12,8 +12,8 @@
       .panel-heading
         h2.panel-title = guide_panel_title
       .panel-body
-        .container
-          #guide.col-lg-4
+        .row
+          #guide.col-lg-5
             - if content_for?(:guide_title)
               = yield(:guide_title)
             - else
@@ -21,7 +21,7 @@
             p.text-ignore = guide_intro
             - if content_for?(:guide)
               = yield(:guide)
-          #content.col-lg-12
+          #content.col-lg-7
             = render 'shared/flash'
             = yield
         - if content_for?(:secondary)

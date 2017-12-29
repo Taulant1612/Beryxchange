@@ -1,11 +1,30 @@
 .row
-  .col-lg-6
-         = simple_form_for @ticket do |f|
-              .md-form
-                = t('.intro')
-              .md-form   
-                = f.input :title
-              .md-from
-                = f.input :content, input_html: {rows: 10}
-              .md-form
-                = f.button :wrapped, cancel: tickets_path
+  .col-lg-12
+    .panel.panel-default
+      .panel-heading
+        h3
+          i.fa.fa-briefcase New Ticket
+
+      .panel-body
+        = simple_form_for @ticket do |f|
+          .md-form
+            = t('.intro')
+          .md-form
+            = f.input :title
+          .md-from
+            = f.input :content, input_html: {rows: 10}
+          .md-form
+            = f.button :wrapped, cancel: tickets_path
+= content_for :guide_title do
+  .panel.panel-default
+    .panel-heading
+      h3
+        i.fa.fa-user Please Read this!
+= content_for :guide do
+  .panel-body
+    ul.list-group style = 'list-style:none;'
+      li.list-item are you sure you waited 24 hours?
+      li.list-item tickets are normally resolved in 24 hours after they are posted.
+      li.list-item our support team is offline on weekends
+      li.list-item kindly write your problem in short and concise words
+    p.text-warning We try our best to resolve problems as soon as possible, so kindly have patience.
