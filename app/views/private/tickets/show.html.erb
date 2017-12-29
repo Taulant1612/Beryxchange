@@ -1,28 +1,16 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3>
-                    Your Ticket
-                </h3>
-            </div>
-
             <div class="panel-body">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4>
-                                    <%= "#{I18n.t('private.tickets.me')} - #{@ticket.title}" %>
-                                </h4>
-                                <span class="pull-right">
-                                  <%= link_to t("private.tickets.close"), close_ticket_path(@ticket), method: :patch, confirm: t("private.tickets.close_confirm"), class: "btn btn-danger" %>
-                                  <%= link_to t("back"), tickets_path, class: "btn btn-info" %>
-                                </span>
-                            </div>
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-lg-12">
+                                      <h4>
+                                        <%= @ticket.title %>
+                                      </h4>
                                         <p>
                                             <%= @ticket.content %>
                                         </p>
@@ -41,18 +29,13 @@
                 </div>
                 <div class="row">
                     <% @comments.each do |c| %>
-                        <div class="col-lg-10">
+                        <div class="col-lg-12">
                             <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4>
-                                        <%= "#{member_tittle(c.author)}" %>
-                                    </h4>
-                                </div>
                                 <div class="panel-body">
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <p>
-                                                <%= c.content %>
+                                              <i class="fa fa-comments"></i><%= "#{member_tittle(c.author)}" %> <%= c.content %>
                                             </p>
                                         </div>
                                         <div class="col-lg-4">
@@ -69,7 +52,7 @@
                         <% end %>
                 </div>
                 <div class="row">
-                    <div class="col-lg-8">
+                    <div class="col-lg-12">
                         <%= simple_form_for @comment, url: ticket_comments_path(@ticket.id) do |f|%>
                             <div class="panel panel-default">
                                 <div class="panel-heading">
@@ -79,20 +62,52 @@
                                 </div>
                                 <div class="panel-body">
                                     <div class="row">
-                                        <div class="col-lg-10">
                                             <span>
-                                                <%= f.input :content, label: false,  input_html: { rows: 10 } %>
+                                                <%= f.input :content, label: false,  input_html: { rows: 12 } %>
                                             </span>
                                             <hr class="split">
                                             <%= f.button :wrapped %>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <% end %>
+                      <% end %>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<% content_for :guide_title do  %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3>
+        <i class="fa fa-comments"></i> Your Ticket
+      </h3>
+      <span class="pull-right">
+        <%= link_to t("private.tickets.close"), close_ticket_path(@ticket), method: :patch, confirm: t("private.tickets.close_confirm"), class: "btn btn-default" %>
+        <%= link_to t("back"), tickets_path, class: "btn btn-default" %>
+      </span>
+    </div>
+  <% end %>
+  <% content_for :guide do %>
+  <div class="panel-body">
+    <ul class="list-group" style="list-style: none;">
+      <li class="list-item">
+        Wait for at least 24 hours after posting a Ticket
+      </li>
+      <li class="list-item">
+        Withdrawals are processed manually, they can take time
+      </li>
+      <li class="list-item">
+        Describe your problem, in short and concise wordings
+      </li>
+      <li class="list-item">
+        <p class="text-warning">
+          We try our best to resolve problems as soon as possible, so kindly have patience.
+        </p>
+      </li>
+    </ul>
+  </div>
+  </div>
+<% end %>

@@ -1,10 +1,10 @@
 <form id="btc_withdraw" class="form form-horizontal" ng-controller="WithdrawsController as withdrawsCtrl" ng-submit="withdrawsCtrl.createWithdraw(currency)">
 
   <div class="form-group">
-    <div class="col-sm-6">
+    <div class="col-lg-12">
       <label class="select required control-label" for="withdraw_fund_source">{{"funds.withdraw_coin.label" | t}}</label>
     </div>
-    <div class="col-sm-12" ng-if="fund_sources().length">
+    <div class="col-lg-12" ng-if="fund_sources().length">
 
       <select id="fund_source" class="select required form-control" name="fund_source"
         ng-model="selected_fund_source_id"
@@ -36,13 +36,13 @@
         <div class="input-group-btn"><button ng-click="withdrawsCtrl.withdrawAll()" class="btn btn-success" id="withdraw_all_btn" type="button">{{"funds.withdraw_coin.withdraw_all" | t}}</button></div>
       </div>
     </div>
-    <span class="col-sm-6 help-block"><a target="_balance" href="/documents/price">{{"funds.withdraw_coin.fee_explain" | t}}</a></span>
+    <span class="col-lg-12 help-block"><a target="_balance" href="/documents/price">{{"funds.withdraw_coin.fee_explain" | t}}</a></span>
   </div>
 
   <ng-include src="'/templates/funds/_two_factor_auth.html'"></ng-include>
 
   <div class="form-group">
-    <div class="form-submit col-sm-18 col-sm-offset-6">
+    <div class="form-submit col-lg-12">
       <input  id="withdraw_submit" class="btn btn-primary" data-loading-text="Creating..." name="commit" type="submit" value="{{'submit' | t}}">
     </div>
   </div>
