@@ -6,13 +6,13 @@
                         <ul style="list-style:none;" class="currency-item" ng-class="{selected: accountsCtrl.isSelected(account.currency),
                               'deposit-now': accountsCtrl.isDeposit(),
                               'withdraw-now': accountsCtrl.isWithdraw() }" data-currency="{{account.currency}}">
-                            <div class="col-lg-5">
+                            <div class="col-lg-2 text-left">
                                 <li class="currency-logo">
                                     <img ng-src="/icon-{{account.currency}}.png" alt="">
                                     <span class="currency-symbol">{{ account.currency | uppercase }}</span>
                                 </li>
                             </div>
-                            <div class="col-lg-7 text-right">
+                            <div class="col-lg-10 text-right">
                                 <div class="huge">
                                     <li class="currency-balance-col">
                                         <p class="currency-balance">

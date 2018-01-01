@@ -569,6 +569,7 @@ header {
   }
   .panel-body-content {
     min-height: $market-trades-height - $panel_table_header_high;
+    min-width: $market-trades-width - $gutter;
   }
 
   table {
@@ -599,11 +600,13 @@ header {
 #market_list {
   position: absolute;
   top: $gutter; left: $gutter;
-  width: $market-list-width; height: $market-list-height;
+  width: $market-list-width; 
+  height: $market-list-height;
   z-index: 999;
 
   .panel-body-content {
     height: $market-list-height - $panel_table_header_high;
+    width: $market-list-width - $gutter ;
 
     td.price {
       .fill { color: #333; }
